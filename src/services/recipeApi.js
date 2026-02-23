@@ -55,7 +55,7 @@ export default {
   // GET /recipes/{id} - Fetch a single recipe
   async getRecipeById(id) {
     try {
-      const response = await apiClient.get(`/recipes/${id}/`)
+      const response = await apiClient.get(`/recipes/${id}`)
       return response.data
     } catch (error) {
       console.error(`Error fetching recipe ${id}:`, error)
@@ -77,7 +77,7 @@ export default {
   // PATCH /recipes/{id} - Update a recipe
   async updateRecipe(id, updates) {
     try {
-      const response = await apiClient.patch(`/recipes/${id}/`, updates)
+      const response = await apiClient.patch(`/recipes/${id}`, updates)
       return response.data
     } catch (error) {
       console.error(`Error updating recipe ${id}:`, error)
@@ -88,7 +88,7 @@ export default {
   // DELETE /recipes/{id} - Delete a recipe
   async deleteRecipe(id) {
     try {
-      const response = await apiClient.delete(`/recipes/${id}/`)
+      const response = await apiClient.delete(`/recipes/${id}`)
       return response.data
     } catch (error) {
       console.error(`Error deleting recipe ${id}:`, error)
@@ -103,7 +103,7 @@ export default {
       if (maxTime) {
         params.max_time = maxTime
       }
-      const response = await apiClient.get('/recipes/search/', { params })
+      const response = await apiClient.get('/recipes/search', { params })
       return response.data
     } catch (error) {
       console.error('Error searching recipes:', error)
