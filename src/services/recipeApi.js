@@ -97,9 +97,12 @@ export default {
   },
 
   // GET /recipes/search - Search recipes by title/ingredient and optional max_time
-  async searchRecipes(query, maxTime = null) {
+  async searchRecipes(query = null, maxTime = null) {
     try {
-      const params = { q: query }
+      const params = {};
+      if (query) {
+        params.q = query
+      }
       if (maxTime) {
         params.max_time = maxTime
       }

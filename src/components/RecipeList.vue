@@ -10,7 +10,7 @@
     </div>
 
     <div v-else-if="recipes.length === 0" class="empty-state">
-      <p>No recipes found. <router-link to="/add">Add your first recipe!</router-link></p>
+      <p>No recipes found.</p>
     </div>
 
     <div v-else class="recipes-grid">

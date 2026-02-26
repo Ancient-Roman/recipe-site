@@ -13,7 +13,7 @@
 
       <div class="search-filters">
         <label>
-          Max cooking time (minutes):
+          Max total time (minutes):
           <input
             v-model.number="maxTime"
             type="number"
@@ -36,7 +36,7 @@ const query = ref('')
 const maxTime = ref(null)
 
 const handleSearch = () => {
-  if (query.value.trim()) {
+  if (query.value.trim() || maxTime.value) {
     emit('search', {
       query: query.value,
       maxTime: maxTime.value
